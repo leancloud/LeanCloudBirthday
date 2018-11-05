@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "7f22dd47-0659-402d-8c59-9a4872a01c56",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "结果bg2@2x": {
+      "ver": "1.0.3",
+      "uuid": "538489e9-1a98-4251-8e3f-b88de25fd1b2",
+      "rawTextureUuid": "7f22dd47-0659-402d-8c59-9a4872a01c56",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 125,
+      "height": 159,
+      "rawWidth": 125,
+      "rawHeight": 159,
+      "borderTop": 40,
+      "borderBottom": 40,
+      "borderLeft": 40,
+      "borderRight": 40,
+      "subMetas": {}
+    }
+  }
+}

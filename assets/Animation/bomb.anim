@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "bomb",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.5166666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": "1",
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "97838497-a099-4a90-9082-3d554c67893c"
+            }
+          },
+          {
+            "frame": 0.13333333333333333,
+            "value": {
+              "__uuid__": "b81f50ef-a20d-46a4-a6b2-1c4516cd3766"
+            }
+          },
+          {
+            "frame": 0.25,
+            "value": {
+              "__uuid__": "7fea1b84-2307-4279-9a43-c5bed3c022d2"
+            }
+          },
+          {
+            "frame": 0.38333333333333336,
+            "value": {
+              "__uuid__": "82285451-6310-41f8-8981-ad654e0e6d2d"
+            }
+          },
+          {
+            "frame": 0.5,
+            "value": {
+              "__uuid__": "2e294d1b-705e-4c64-82a6-466219c6971b"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

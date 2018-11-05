@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "d22cad2e-56aa-47d2-bea5-7078371406f7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "小蛋糕1@2x": {
+      "ver": "1.0.3",
+      "uuid": "e903f4a9-5a40-4028-b8bc-6d3a154ca430",
+      "rawTextureUuid": "d22cad2e-56aa-47d2-bea5-7078371406f7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 38,
+      "height": 42,
+      "rawWidth": 38,
+      "rawHeight": 42,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

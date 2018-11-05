@@ -1,2 +1,2 @@
-# LeanCloudBirthday
-五周年小游戏
+# hello-world
+Hello world new project template.

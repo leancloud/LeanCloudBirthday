@@ -1,0 +1,31 @@
+{
+  "ver": "2.2.0",
+  "uuid": "8ed24535-abdd-4a75-8e20-135d6f9f8f22",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "subMetas": {
+    "点击掉落的蛋糕2x": {
+      "ver": "1.0.3",
+      "uuid": "26ea64d4-3bf8-44d1-85cb-3d6ca123026f",
+      "rawTextureUuid": "8ed24535-abdd-4a75-8e20-135d6f9f8f22",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 228,
+      "height": 30,
+      "rawWidth": 228,
+      "rawHeight": 30,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
