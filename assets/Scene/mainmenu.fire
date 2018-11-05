@@ -1509,6 +1509,9 @@
       "__id__": 2
     },
     "_enabled": true,
+    "startNode": {
+      "__id__": 10
+    },
     "_id": "41QYoyiY9MA4B/UVMQrADN"
   }
 ]

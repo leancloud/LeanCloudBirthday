@@ -18,10 +18,57 @@ const SDK = {
         });
     },
 
-    authorize() {
-        if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
-            wx.authorize()
-        }
+    authorize(xr, yr, wr, hr) {
+        return new Promise((resolve, reject) => {
+            if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
+                const {
+                    windowWidth,
+                    windowHeight,
+                } = wx.getSystemInfoSync();
+                const x = xr * windowWidth;
+                const y = yr * windowHeight;
+                const width = wr * windowWidth;
+                const height = hr * windowHeight;
+                const btn = wx.createUserInfoButton({
+                    text: '',
+                    style: {
+                        left: x,
+                        top: y,
+                        width,
+                        height,
+                        lineHeight: height,
+                        backgroundColor: '#ffffff00',
+                        color: '#0094F4',
+                        textAlign: 'center',
+                        fontSize: 16,
+                        borderRadius: 4,
+                        'justify-content': 'center',
+                    }
+                });
+                btn.onTap((res) => {
+                    const { userInfo } = res;
+                    if (userInfo) {
+                        console.log('授权成功');
+                        const user = AV.User.current();
+                        user.set(userInfo);
+                        user.save()
+                            .then(() => {
+                                btn.destroy();
+                                resolve();
+                            })
+                            .catch((error) => {
+                                console.error(error);
+                                reject(error);
+                            });
+                    } else {
+                        console.log('授权失败');
+                        reject(new Error('授权失败'));
+                    }
+                });
+            } else {
+                resolve();
+            }
+        });
     },
 
     myself() {
@@ -50,6 +97,26 @@ const SDK = {
         });
     },
 
+    getMyUserInfo() {
+        return new Promise((resolve, reject) => {
+            wx.getUserInfo({
+                success: ({ userInfo }) => {
+                    // 更新当前用户的信息
+                    const user = AV.User.current();
+                    user.set(userInfo).save()
+                        .then(() => {
+                            resolve();
+                        }).catch((error) => {
+                            reject(error);
+                        });
+                },
+                fail: (res) => {
+                    reject(new Error(res.errMsg))
+                },
+            });
+        });
+    },
+
     saveInfo(userInfo) {
         return new Promise((resolve, reject) => {
             if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
@@ -72,21 +139,11 @@ const SDK = {
             // 微信登录
             if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
                 AV.User.loginWithWeapp().then(user => {
-                    wx.getUserInfo({
-                        success: ({ userInfo }) => {
-                            // 更新当前用户的信息
-                            user.set(userInfo).save()
-                                .then(() => {
-                                    resolve();
-                                }).catch((error) => {
-                                    reject(error);
-                                });
-                        },
-                        fail: (res) => {
-                            reject(new Error(res.errMsg))
-                        },
-                    });
-                }).catch(console.error);
+                    resolve();
+                }).catch(error => {
+                    console.error(error);
+                    reject(error);
+                });
             } else {
                 resolve();
             }

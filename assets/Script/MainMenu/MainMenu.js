@@ -6,10 +6,35 @@ import SDK from '../SDK';
 cc.Class({
     extends: cc.Component,
 
+    properties: {
+        startNode: {
+            type: cc.Node,
+            default: null,
+        }
+    },
+
     // LIFE-CYCLE CALLBACKS:
 
     onLoad() {
-        
+        // 根据获取用户信息情况，确定是否覆盖
+        const x = (this.node.width - this.startNode.width) / 2;
+        const y =  (this.node.height - this.startNode.height) / 2 - this.startNode.y;
+        const { width, height } = this.startNode;
+        const xr = x / this.node.width;
+        const yr = y / this.node.height;
+        const wr = width / this.node.width;
+        const hr = height / this.node.height;
+        console.log(`rate: ${xr}, ${yr}, ${wr}, ${hr}`)
+
+        SDK.getMyUserInfo()
+            .then()
+            .catch(() => {
+                SDK.authorize(xr, yr, wr, hr)
+                    .then(() => {
+                        cc.director.loadScene('gameplay');
+                    })
+                    .catch(console.error);
+            });
     },
 
     // UI Events
