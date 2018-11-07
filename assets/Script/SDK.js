@@ -81,10 +81,16 @@ const SDK = {
         return null;
     },
 
-    myInfo() {
+    // 获取
+    myUserInfo() {
         if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME)
             return AV.User.current().get('nickName');
         return null;
+    },
+
+    // 获取详细信息
+    myInfo() {
+        return AV.User.current().get('info');
     },
 
     tryCreateUserInfoButton(xr, yr, wr, hr, success, fail) {
@@ -207,26 +213,6 @@ const SDK = {
             } else {
                 resolve(null);
             }
-        });
-    },
-
-    getMyUserInfo() {
-        return new Promise((resolve, reject) => {
-            wx.getUserInfo({
-                success: ({ userInfo }) => {
-                    // 更新当前用户的信息
-                    const user = AV.User.current();
-                    user.set(userInfo).save()
-                        .then(() => {
-                            resolve();
-                        }).catch((error) => {
-                            reject(error);
-                        });
-                },
-                fail: (res) => {
-                    reject(new Error(res.errMsg))
-                },
-            });
         });
     },
 

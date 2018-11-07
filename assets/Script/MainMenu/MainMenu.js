@@ -17,9 +17,8 @@ cc.Class({
 
     onLoad() {
         // 检查是否获取到了微信 UserInfo
-        const userInfo = SDK.myInfo();
-        console.log(`nickname: ${userInfo}`);
-        if (userInfo === undefined) {
+        const myself = SDK.myself();
+        if (myself.get('nickName') === undefined) {
             // 如果没有微信 UserInfo，则创建按钮覆盖开始按钮，在点击开始后，先获取，再开始游戏
             const { xr, yr, wr, hr } = this._calcStartNodeBox();
             SDK.tryCreateUserInfoButton(xr, yr, wr, hr, 
@@ -35,8 +34,8 @@ cc.Class({
 
     onStartBtnClicked() {
         // 检查是否获取到了微信 UserInfo
-        const userInfo = SDK.myInfo();
-        if (userInfo) {
+        const myself = SDK.myself();
+        if (myself.get('nickName')) {
             cc.director.loadScene('gameplay');
         } else {
             // 补一下：如果是新版中没有用户信息，但是却点击到了开始按钮，则取消操作，重新生成遮挡（理论上不会发生）

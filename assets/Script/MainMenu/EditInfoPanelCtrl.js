@@ -38,20 +38,18 @@ cc.Class({
 
     onEnable() {
         // 每次打开重新获取
-        SDK.getMyInfo()
-            .then(userInfo => {
-                if (userInfo === null) {
-                    this._userInfo = new AV.Object('UserInfo');
-                } else {
-                    this._userInfo = userInfo;
-                    // 更新界面
-                    this.nameEditBox.string = this._userInfo.get('name');
-                    this.regionEditBox.string = this._userInfo.get('region');
-                    this.addressEditBox.string = this._userInfo.get('address');
-                    this.mobileEditBox.string = this._userInfo.get('mobile');
-                    this.accountEditBox.string = this._userInfo.get('account');
-                }
-            });
+        const myInfo = SDK.myInfo();
+        if (myInfo) {
+            this._userInfo = myInfo;
+            // 更新界面
+            this.nameEditBox.string = this._userInfo.get('name');
+            this.regionEditBox.string = this._userInfo.get('region');
+            this.addressEditBox.string = this._userInfo.get('address');
+            this.mobileEditBox.string = this._userInfo.get('mobile');
+            this.accountEditBox.string = this._userInfo.get('account');
+        } else {
+            this._userInfo = new AV.Object('UserInfo');
+        }
     },
 
     onSubmitBtnClicked() {
