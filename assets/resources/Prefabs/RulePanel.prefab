@@ -27,17 +27,17 @@
     "_level": 1,
     "_components": [
       {
-        "__id__": 106
+        "__id__": 109
       },
       {
-        "__id__": 107
+        "__id__": 110
       },
       {
-        "__id__": 108
+        "__id__": 111
       }
     ],
     "_prefab": {
-      "__id__": 109
+      "__id__": 112
     },
     "_opacity": 255,
     "_color": {
@@ -234,21 +234,21 @@
         "__id__": 51
       },
       {
-        "__id__": 94
+        "__id__": 97
       }
     ],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 103
+        "__id__": 106
       },
       {
-        "__id__": 104
+        "__id__": 107
       }
     ],
     "_prefab": {
-      "__id__": 105
+      "__id__": 108
     },
     "_opacity": 255,
     "_color": {
@@ -461,7 +461,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "a4MrHR1OpKSIelXbfb/Wqm",
+    "fileId": "75WTuMtDVDkYfGCeSrzmsH",
     "sync": false
   },
   {
@@ -716,7 +716,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "3bc4zvU81ISKV8+jHHBO7Z",
+    "fileId": "8bpJHcc+dHubJlBBkB5Cii",
     "sync": false
   },
   {
@@ -815,7 +815,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "51Ab/gu21ChYQp7RfqAkiT",
+    "fileId": "08vdBriwFDz55TpakFyvyl",
     "sync": false
   },
   {
@@ -919,7 +919,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "3cuUbnztVEvK+smDiKHoSF",
+    "fileId": "191dPmdOZL+phfXOb43SrU",
     "sync": false
   },
   {
@@ -1018,7 +1018,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "b5M+CLDB9CWIKbJoudVgqh",
+    "fileId": "8c8OX+ecBJEootlTWOV8tr",
     "sync": false
   },
   {
@@ -1122,7 +1122,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "46RAY+4ElBcr+4onSz/9Oo",
+    "fileId": "1fTTwmwt9K+4W5NCyV/bJh",
     "sync": false
   },
   {
@@ -1221,7 +1221,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "5de0vGqnNIL4EsXTdJB0m5",
+    "fileId": "83yZFR1bRIZLgpIYmkbprl",
     "sync": false
   },
   {
@@ -1325,7 +1325,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "d8HH8Sy2lFiZq3N5RCSnnk",
+    "fileId": "d79hN3k2lL+L9yCJyQXHSs",
     "sync": false
   },
   {
@@ -1424,7 +1424,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "6fLeN9Lt9AB6DKZDfk2s/S",
+    "fileId": "f1KrxNdpJALYZ5PJNJqPGM",
     "sync": false
   },
   {
@@ -1528,7 +1528,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "b4d0s4BZJA25riGC6Tkzu5",
+    "fileId": "1cqKjcTflHw7rjDGdfbRSI",
     "sync": false
   },
   {
@@ -1627,7 +1627,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "ad+dmmByVLrJuJh1Tcyyb+",
+    "fileId": "3fG98aPQdByKZ5KF+PUTZ6",
     "sync": false
   },
   {
@@ -1726,7 +1726,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "90tSVbmkdHK7f3sYCikUNn",
+    "fileId": "bf1rEadI9AvYpwj59Kbivj",
     "sync": false
   },
   {
@@ -1833,20 +1833,23 @@
       },
       {
         "__id__": 88
+      },
+      {
+        "__id__": 91
       }
     ],
     "_active": true,
     "_level": 1,
     "_components": [
       {
-        "__id__": 91
+        "__id__": 94
       },
       {
-        "__id__": 92
+        "__id__": 95
       }
     ],
     "_prefab": {
-      "__id__": 93
+      "__id__": 96
     },
     "_opacity": 255,
     "_color": {
@@ -1859,7 +1862,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 570,
-      "height": 650
+      "height": 630
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1922,7 +1925,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 171.13,
-      "height": 50
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1932,7 +1935,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -285,
-      "y": 275,
+      "y": 270,
       "z": 0
     },
     "_scale": {
@@ -1967,10 +1970,10 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "2. 活动时间：",
-    "_N$string": "2. 活动时间：",
+    "_string": "2.\t活动时间：",
+    "_N$string": "2.\t活动时间：",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -1989,7 +1992,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "bezFxZ/OlDnpyMicF88p+Q",
+    "fileId": "7fEZFOBJtOZaFAgdOteR3/",
     "sync": false
   },
   {
@@ -2020,8 +2023,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 562.32,
-      "height": 50
+      "width": 560,
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2066,10 +2069,10 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "2018年11月15日-2018年11月29日，活动结束",
-    "_N$string": "2018年11月15日-2018年11月29日，活动结束",
+    "_string": "（活动时间待定），活动结束后游戏成绩将不",
+    "_N$string": "（活动时间待定），活动结束后游戏成绩将不",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2088,7 +2091,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "64aaRN5p9KAbgcyTuyZm8U",
+    "fileId": "a9cEzWMVRDt4GUtAenSg62",
     "sync": false
   },
   {
@@ -2119,8 +2122,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 364,
-      "height": 50
+      "width": 308,
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2130,7 +2133,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -285,
-      "y": 175,
+      "y": 180,
       "z": 0
     },
     "_scale": {
@@ -2165,10 +2168,10 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "后游戏成绩将不计入排行榜。",
-    "_N$string": "后游戏成绩将不计入排行榜。",
+    "_string": "计入本次活动的排行榜。",
+    "_N$string": "计入本次活动的排行榜。",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2187,7 +2190,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "3eKmm3T2JHL7b+2XXhr8/n",
+    "fileId": "39h0ExRXBOt7UaSYETspgK",
     "sync": false
   },
   {
@@ -2219,7 +2222,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 563.13,
-      "height": 50
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2229,7 +2232,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -285,
-      "y": 125,
+      "y": 135,
       "z": 0
     },
     "_scale": {
@@ -2264,10 +2267,10 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "3. 每日游戏次数不限，排行榜计入单局游戏最",
-    "_N$string": "3. 每日游戏次数不限，排行榜计入单局游戏最",
+    "_string": "3.\t每日游戏次数不限，排行榜计入单局游戏最",
+    "_N$string": "3.\t每日游戏次数不限，排行榜计入单局游戏最",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2286,7 +2289,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "3bVtz7fK5FPar59iVk5xie",
+    "fileId": "6cwkQosXFGOayplT47UFqr",
     "sync": false
   },
   {
@@ -2318,7 +2321,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 112,
-      "height": 50
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2328,7 +2331,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -285,
-      "y": 75,
+      "y": 90,
       "z": 0
     },
     "_scale": {
@@ -2366,7 +2369,7 @@
     "_string": "高分数。",
     "_N$string": "高分数。",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2385,7 +2388,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "577Joo0u1Mcbkii5AOjdCG",
+    "fileId": "dbJMG43y1OR4J0OtVnTpN/",
     "sync": false
   },
   {
@@ -2417,7 +2420,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 563.13,
-      "height": 50
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2427,7 +2430,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -285,
-      "y": 25,
+      "y": 45,
       "z": 0
     },
     "_scale": {
@@ -2462,10 +2465,10 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "4. 奖品按照排行榜顺序依次发放，请在排行榜",
-    "_N$string": "4. 奖品按照排行榜顺序依次发放，请在排行榜",
+    "_string": "4.\t奖品按照排行榜顺序依次发放，请在排行榜",
+    "_N$string": "4.\t奖品按照排行榜顺序依次发放，请在排行榜",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2484,7 +2487,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "1bO7AOR5BGRJOGlHh/I0uq",
+    "fileId": "d8RH8cZixDK7D7n1hztmeI",
     "sync": false
   },
   {
@@ -2515,8 +2518,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 532,
-      "height": 50
+      "width": 560,
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2526,7 +2529,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -285,
-      "y": -25,
+      "y": 0,
       "z": 0
     },
     "_scale": {
@@ -2561,10 +2564,10 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "页面填写收件信息，未填写视为放弃礼品。",
-    "_N$string": "页面填写收件信息，未填写视为放弃礼品。",
+    "_string": "页面填写收件信息，未填写视为放弃奖品，奖",
+    "_N$string": "页面填写收件信息，未填写视为放弃奖品，奖",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2583,7 +2586,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "e5Q3UqrAFBw4yAsmwEJeBK",
+    "fileId": "4eJI1zVmhDlI59JVxnp1KT",
     "sync": false
   },
   {
@@ -2614,8 +2617,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 171.13,
-      "height": 50
+      "width": 140,
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2625,7 +2628,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -285,
-      "y": -75,
+      "y": -45,
       "z": 0
     },
     "_scale": {
@@ -2660,10 +2663,10 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "5. 奖品安排：",
-    "_N$string": "5. 奖品安排：",
+    "_string": "品不顺延。",
+    "_N$string": "品不顺延。",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2682,7 +2685,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "2a+j3NjbNLDJVDV30XcL/Q",
+    "fileId": "178vlFxPhDIK+KDCkdUVc/",
     "sync": false
   },
   {
@@ -2713,8 +2716,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 256.72,
-      "height": 50
+      "width": 171.13,
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2724,7 +2727,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -285,
-      "y": -125,
+      "y": -90,
       "z": 0
     },
     "_scale": {
@@ -2759,10 +2762,10 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "    第1名  Switch一台",
-    "_N$string": "    第1名  Switch一台",
+    "_string": "5.\t奖品安排：",
+    "_N$string": "5.\t奖品安排：",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2781,7 +2784,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "aex5pCRphC0oyJs6ADrxNn",
+    "fileId": "127uez7jtE06S7/xi7LIvC",
     "sync": false
   },
   {
@@ -2812,8 +2815,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 337.6,
-      "height": 50
+      "width": 241.16,
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2823,7 +2826,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -285,
-      "y": -175,
+      "y": -135,
       "z": 0
     },
     "_scale": {
@@ -2858,10 +2861,10 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "    第2-4名  小米AI智能音箱",
-    "_N$string": "    第2-4名  小米AI智能音箱",
+    "_string": "\t第1名  Switch 一台",
+    "_N$string": "\t第1名  Switch 一台",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -2880,7 +2883,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "f6kWV1NEFKg4HgRdd1gRij",
+    "fileId": "cbPVLr6NJBK75VKiEsqB1E",
     "sync": false
   },
   {
@@ -2911,8 +2914,107 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 270.72,
-      "height": 50
+      "width": 287.81,
+      "height": 45
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_position": {
+      "__type__": "cc.Vec3",
+      "x": -285,
+      "y": -180,
+      "z": 0
+    },
+    "_scale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_quat": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_zIndex": -32768,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 82
+    },
+    "_enabled": true,
+    "_srcBlendFactor": 1,
+    "_dstBlendFactor": 771,
+    "_useOriginalSize": true,
+    "_string": "\t第2-4名  小米智能音箱",
+    "_N$string": "\t第2-4名  小米智能音箱",
+    "_fontSize": 28,
+    "_lineHeight": 45,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_N$horizontalAlign": 0,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
+    },
+    "fileId": "c76hfYxddN6J/zZbWDGi7T",
+    "sync": false
+  },
+  {
+    "__type__": "cc.PrivateNode",
+    "_name": "RICHTEXT_CHILD",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 51
+    },
+    "_children": [],
+    "_active": true,
+    "_level": 2,
+    "_components": [
+      {
+        "__id__": 86
+      }
+    ],
+    "_prefab": {
+      "__id__": 87
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 303.38,
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2951,115 +3053,16 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 82
-    },
-    "_enabled": true,
-    "_srcBlendFactor": 1,
-    "_dstBlendFactor": 771,
-    "_useOriginalSize": true,
-    "_string": "    第5-10名  零食礼包",
-    "_N$string": "    第5-10名  零食礼包",
-    "_fontSize": 28,
-    "_lineHeight": 50,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_N$horizontalAlign": 0,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
-    "_N$overflow": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
-    },
-    "fileId": "c20ByNnNpJFrIWo+x7b3FN",
-    "sync": false
-  },
-  {
-    "__type__": "cc.PrivateNode",
-    "_name": "RICHTEXT_CHILD",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 51
-    },
-    "_children": [],
-    "_active": true,
-    "_level": 2,
-    "_components": [
-      {
-        "__id__": 86
-      }
-    ],
-    "_prefab": {
-      "__id__": 87
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 484.91,
-      "height": 50
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": -285,
-      "y": -275,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_rotationX": 0,
-    "_rotationY": 0,
-    "_quat": {
-      "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_zIndex": -32768,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
       "__id__": 85
     },
     "_enabled": true,
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "    第11-30名  周边笔记本+杯子+收纳包",
-    "_N$string": "    第11-30名  周边笔记本+杯子+收纳包",
+    "_string": "\t第5-10名  方糖智能音箱",
+    "_N$string": "\t第5-10名  方糖智能音箱",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -3078,7 +3081,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "74iixSDypASIx4L5LdUbNg",
+    "fileId": "1dj8GL7QFBaKjvJ7WKtvqg",
     "sync": false
   },
   {
@@ -3109,8 +3112,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 414.64,
-      "height": 50
+      "width": 484.87,
+      "height": 45
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3120,7 +3123,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": -285,
-      "y": -325,
+      "y": -270,
       "z": 0
     },
     "_scale": {
@@ -3155,10 +3158,10 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "    第31-50名  周边笔记本+束口袋",
-    "_N$string": "    第31-50名  周边笔记本+束口袋",
+    "_string": "\t第11-30名  周边笔记本、杯子、收纳包",
+    "_N$string": "\t第11-30名  周边笔记本、杯子、收纳包",
     "_fontSize": 28,
-    "_lineHeight": 50,
+    "_lineHeight": 45,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -3177,7 +3180,106 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "e5X2ExmsxPb6g9EWFy+gkR",
+    "fileId": "08Xwi9MORGtLE8V8MoTAcY",
+    "sync": false
+  },
+  {
+    "__type__": "cc.PrivateNode",
+    "_name": "RICHTEXT_CHILD",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 51
+    },
+    "_children": [],
+    "_active": true,
+    "_level": 2,
+    "_components": [
+      {
+        "__id__": 92
+      }
+    ],
+    "_prefab": {
+      "__id__": 93
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 402.95,
+      "height": 45
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_position": {
+      "__type__": "cc.Vec3",
+      "x": -285,
+      "y": -315,
+      "z": 0
+    },
+    "_scale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_quat": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_zIndex": -32768,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 91
+    },
+    "_enabled": true,
+    "_srcBlendFactor": 1,
+    "_dstBlendFactor": 771,
+    "_useOriginalSize": true,
+    "_string": "\t第31-50名  周边笔记本、束口袋",
+    "_N$string": "\t第31-50名  周边笔记本、束口袋",
+    "_fontSize": 28,
+    "_lineHeight": 45,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_N$horizontalAlign": 0,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
+    },
+    "fileId": "67dgJkt0BOe4jdl4UXLmru",
     "sync": false
   },
   {
@@ -3188,12 +3290,12 @@
       "__id__": 51
     },
     "_enabled": true,
-    "_N$string": "<color=#000000>2. 活动时间：\n2018年11月15日-2018年11月29日，活动结束后游戏成绩将不计入排行榜。\n3. 每日游戏次数不限，排行榜计入单局游戏最高分数。\n4. 奖品按照排行榜顺序依次发放，请在排行榜页面填写收件信息，未填写视为放弃礼品。\n5. 奖品安排：\n    第1名  Switch一台\n    第2-4名  小米AI智能音箱\n    第5-10名  零食礼包\n    第11-30名  周边笔记本+杯子+收纳包\n    第31-50名  周边笔记本+束口袋</color>",
+    "_N$string": "<color=#000000>2.\t活动时间：\n（活动时间待定），活动结束后游戏成绩将不计入本次活动的排行榜。\n3.\t每日游戏次数不限，排行榜计入单局游戏最高分数。\n4.\t奖品按照排行榜顺序依次发放，请在排行榜页面填写收件信息，未填写视为放弃奖品，奖品不顺延。\n5.\t奖品安排：\n\t第1名  Switch 一台\n\t第2-4名  小米智能音箱\n\t第5-10名  方糖智能音箱\n\t第11-30名  周边笔记本、杯子、收纳包\n\t第31-50名  周边笔记本、束口袋</color>",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 28,
     "_N$font": null,
     "_N$maxWidth": 570,
-    "_N$lineHeight": 50,
+    "_N$lineHeight": 45,
     "_N$imageAtlas": {
       "__uuid__": "23110e1c-e47e-43bc-b397-5144fdd65b1a"
     },
@@ -3213,7 +3315,7 @@
     "_alignFlags": 41,
     "_left": 40,
     "_right": 40,
-    "_top": 285,
+    "_top": 295,
     "_bottom": 0,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
@@ -3247,24 +3349,24 @@
     },
     "_children": [
       {
-        "__id__": 95
+        "__id__": 98
       }
     ],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 98
-      },
-      {
-        "__id__": 99
-      },
-      {
         "__id__": 101
+      },
+      {
+        "__id__": 102
+      },
+      {
+        "__id__": 104
       }
     ],
     "_prefab": {
-      "__id__": 102
+      "__id__": 105
     },
     "_opacity": 255,
     "_color": {
@@ -3316,18 +3418,18 @@
     "_name": "Label",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 94
+      "__id__": 97
     },
     "_children": [],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 96
+        "__id__": 99
       }
     ],
     "_prefab": {
-      "__id__": 97
+      "__id__": 100
     },
     "_opacity": 255,
     "_color": {
@@ -3379,7 +3481,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 95
+      "__id__": 98
     },
     "_enabled": true,
     "_srcBlendFactor": 1,
@@ -3415,7 +3517,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 94
+      "__id__": 97
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -3443,7 +3545,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 94
+      "__id__": 97
     },
     "_enabled": true,
     "transition": 3,
@@ -3465,7 +3567,7 @@
     "zoomScale": 1.2,
     "clickEvents": [
       {
-        "__id__": 100
+        "__id__": 103
       }
     ],
     "_N$interactable": true,
@@ -3503,7 +3605,7 @@
       "__uuid__": "29158224-f8dd-4661-a796-1ffab537140e"
     },
     "_N$target": {
-      "__id__": 94
+      "__id__": 97
     },
     "_id": ""
   },
@@ -3521,7 +3623,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 94
+      "__id__": 97
     },
     "_enabled": true,
     "alignMode": 0,

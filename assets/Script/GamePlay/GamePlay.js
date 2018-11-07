@@ -214,7 +214,7 @@ cc.Class({
                     const y = this._node.height * 0.5;
                     cake.position = cc.v2(x, y);
                     const cakeCtrl = cake.getComponent(CakeCtrl);
-                    cakeCtrl.speed = getRandomInt(-400, -200);
+                    cakeCtrl.speed = getRandomInt(-Constants.MAX_FALL_SPEED, -Constants.MIN_FALL_SPEED);
                 }, Constants.SPAWN_RATE * 1000);
             },
 

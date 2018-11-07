@@ -6,7 +6,9 @@ const Constants = {
     // 分享奖励时间
     SHARED_TIME: 10,
     // 生成蛋糕频率
-    SPAWN_RATE: 0.3,
+    SPAWN_RATE: 0.1,
+    MAX_FALL_SPEED: 1000,
+    MIN_FALL_SPEED: 200,
     // 分享标题
     SHARE_TITLE: '抢蛋糕，赢 Switch！LeanCloud 五周年快乐',
     // 分享图片

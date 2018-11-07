@@ -36,7 +36,7 @@ cc.Class({
                 .then(rankings => {
                     // rankings 为前 50 的排名结果
                     this._rankings = rankings;
-                    this.totalCount = rankings.length;
+                    this.totalCount = this._rankings.length;
                     this._content.height = this.totalCount * this.itemHeight;
                     this.spawnCount = Math.min(10, this.totalCount);
                     console.log(`${this.totalCount}, ${this._content.height}, ${this.spawnCount}`);
@@ -46,7 +46,7 @@ cc.Class({
                         item.setPosition(0, -this.itemHeight * (0.5 + i));
                         // 更新数据
                         const itemCtrl = item.getComponent(LeaderBoardItemCtrl);
-                        itemCtrl.updateData(rankings[i]);
+                        itemCtrl.updateData(this._rankings[i]);
                         this._items.push(item);
                     }
                 });
