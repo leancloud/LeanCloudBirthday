@@ -12,7 +12,7 @@ cc.Class({
         totalCount: 50,
         spawnCount: 10,
         itemHeight: 160,
-        totalHeight: 600,
+        totalHeight: 400,
         myLeaderBoardItemCtrl: {
             type: LeaderBoardItemCtrl,
             default: null
@@ -35,11 +35,11 @@ cc.Class({
             SDK.getRankings()
                 .then(rankings => {
                     // rankings 为前 50 的排名结果
-                    console.log(`rank: ${JSON.stringify(rankings)}`);
                     this._rankings = rankings;
                     this.totalCount = rankings.length;
                     this._content.height = this.totalCount * this.itemHeight;
                     this.spawnCount = Math.min(10, this.totalCount);
+                    console.log(`${this.totalCount}, ${this._content.height}, ${this.spawnCount}`);
                     for (let i = 0; i < this.spawnCount; i++) {
                         let item = cc.instantiate(prefab);
                         this._content.addChild(item);
@@ -73,7 +73,7 @@ cc.Class({
             return;
         this._updateTimer = 0;
         let items = this._items;
-        let isDown = this.scrollView.content.y < this._lastContentPosY;
+        let isDown = this._content.y < this._lastContentPosY;
         let offset = this.itemHeight * items.length;
         for (let i = 0; i < items.length; i++) {
             const item = items[i];

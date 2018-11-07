@@ -8,6 +8,38 @@ if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
     AV = require('leancloud-storage');
 }
 
+function versionCompare(left, right) {
+    if (typeof left + typeof right != 'stringstring')
+        return false;
+    
+    var a = left.split('.')
+    ,   b = right.split('.')
+    ,   i = 0, len = Math.max(a.length, b.length);
+        
+    for (; i < len; i++) {
+        if ((a[i] && !b[i] && parseInt(a[i]) > 0) || (parseInt(a[i]) > parseInt(b[i]))) {
+            return 1;
+        } else if ((b[i] && !a[i] && parseInt(b[i]) > 0) || (parseInt(a[i]) < parseInt(b[i]))) {
+            return -1;
+        }
+    }
+    
+    return 0;
+}
+
+function saveUserInfo(userInfo) {
+    return new Promise((resolve, reject) => {
+        const user = AV.User.current();
+        user.set(userInfo)
+            .save()
+            .then(() => {
+                resolve();
+            }).catch((error) => {
+                reject(error);
+        });
+    });
+}
+
 const SDK = {
     init() {
         const APP_ID = 'nb4egfMaDOj6jzqRhBuWpk5m-gzGzoHsz';
@@ -18,9 +50,49 @@ const SDK = {
         });
     },
 
-    authorize(xr, yr, wr, hr) {
+    login() {
         return new Promise((resolve, reject) => {
+            // 微信登录
             if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
+                AV.User.loginWithWeapp().then(user => {
+                    user.fetch({
+                        include: ['info'],
+                    })
+                    .then((user) => {
+                        resolve(user);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        reject(error)
+                    });
+                }).catch(error => {
+                    console.error(error);
+                    reject(error);
+                });
+            } else {
+                resolve();
+            }
+        });
+    },
+
+    myself() {
+        if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME)
+            return AV.User.current();
+        return null;
+    },
+
+    myInfo() {
+        if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME)
+            return AV.User.current().get('nickName');
+        return null;
+    },
+
+    tryCreateUserInfoButton(xr, yr, wr, hr, success, fail) {
+        if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
+            const sysInfo = wx.getSystemInfoSync();
+            const { SDKVersion } = sysInfo;
+            if (versionCompare(SDKVersion, '2.1.0') >= 0) {
+                console.log('create user info button');
                 const {
                     windowWidth,
                     windowHeight,
@@ -49,20 +121,59 @@ const SDK = {
                     const { userInfo } = res;
                     if (userInfo) {
                         console.log('授权成功');
-                        const user = AV.User.current();
-                        user.set(userInfo);
-                        user.save()
+                        saveUserInfo(userInfo)
                             .then(() => {
+                                console.log('save success');
                                 btn.destroy();
-                                resolve();
+                                if (success)
+                                    success();
                             })
                             .catch((error) => {
                                 console.error(error);
-                                reject(error);
                             });
                     } else {
                         console.log('授权失败');
-                        reject(new Error('授权失败'));
+                        if (fail)
+                            fail();
+                    }
+                });
+            } else {
+                console.log('old version');
+                if (fail)
+                    fail();
+            }
+        } else {
+            if (fail)
+                fail();
+        }
+    },
+
+    deprecateAuthorize() {
+        return new Promise((resolve, reject) => {
+            if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
+                wx.authorize({
+                    scope: 'scope.userInfo',
+                    success() {
+                        wx.getUserInfo({
+                            success({ userInfo }) {
+                                // 更新当前用户的信息
+                                saveUserInfo(userInfo)
+                                    .then(() => {
+                                        resolve();
+                                    })
+                                    .catch((error) => {
+                                        console.error(error);
+                                        reject(error);
+                                    });
+                            },
+                            fail(res) {
+                                reject(new Error(res.errMsg))
+                            },
+                        });
+                    },
+                    fail(res) {
+                        console.log('deprecate authorize failed');
+                        reject(new Error(res.errMsg));
                     }
                 });
             } else {
@@ -71,8 +182,10 @@ const SDK = {
         });
     },
 
-    myself() {
-        return AV.User.current();
+    openSetting() {
+        if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
+            wx.openSetting();
+        }
     },
 
     getMyInfo() {
@@ -134,21 +247,7 @@ const SDK = {
         });
     },
 
-    login() {
-        return new Promise((resolve, reject) => {
-            // 微信登录
-            if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
-                AV.User.loginWithWeapp().then(user => {
-                    resolve();
-                }).catch(error => {
-                    console.error(error);
-                    reject(error);
-                });
-            } else {
-                resolve();
-            }
-        });
-    },
+    
 
     submitScore(score) {
         // 向排行榜提交分数

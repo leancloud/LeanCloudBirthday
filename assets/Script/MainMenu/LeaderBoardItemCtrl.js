@@ -38,7 +38,6 @@ cc.Class({
     },
 
     updateData(ranking) {
-        console.log(`update: ${JSON.stringify(ranking)}`);
         const {
             rank,
             value,
@@ -46,19 +45,23 @@ cc.Class({
         } = ranking;
         this.index = rank;
         this._updateRank(rank);
-        this._updateName(rank, user.get('nickName'));
-        this._updateScore(rank, value);
-        const avatarUrl = user.get('avatarUrl');
-        this._updateAvatar(avatarUrl);
+        if (user) {
+            this._updateName(rank, user.get('nickName'));
+            this._updateScore(rank, value);
+            const avatarUrl = user.get('avatarUrl');
+            this._updateAvatar(avatarUrl);
+        }
     },
 
     _updateAvatar(avatarUrl) {
-        cc.loader.load({
-            url: avatarUrl,
-            type: 'png',
-        }, (err, tex) => {
-            this.avatarSprite.spriteFrame = new cc.SpriteFrame(tex);
-        });
+        if (avatarUrl) {
+            cc.loader.load({
+                url: avatarUrl,
+                type: 'png',
+            }, (err, tex) => {
+                this.avatarSprite.spriteFrame = new cc.SpriteFrame(tex);
+            });
+        }
     },
 
     _updateName(rank, nickName) {
