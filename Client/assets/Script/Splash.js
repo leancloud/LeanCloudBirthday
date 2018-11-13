@@ -21,7 +21,7 @@ cc.Class({
                 SDK.hideLoading();
                 cc.director.loadScene('mainmenu');
             })
-            .catch((error) => {
+            .catch(error => {
                 SDK.hideLoading();
                 this.tipsLabel.string = JSON.stringify(error);
                 SDK.toast(error.errMsg);

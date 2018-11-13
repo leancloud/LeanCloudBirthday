@@ -54,38 +54,48 @@ const SDK = {
         return new Promise((resolve, reject) => {
             // 微信登录
             if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
-                AV.User.loginWithWeapp().then(user => {
-                    user.fetch({
-                        include: ['info'],
-                    })
-                    .then((user) => {
-                        resolve(user);
-                    })
-                    .catch(error => {
-                        console.error(error);
-                        reject(error)
+                AV.User.loginWithWeapp()
+                    .then(user => {
+                        user.fetch({
+                            include: ['info'],
+                        })
+                        .then(user => {
+                            resolve(user);
+                        })
+                        .catch(error => {
+                            reject(error)
+                        });
+                    }).catch(error => {
+                        reject(error);
                     });
-                }).catch(error => {
-                    console.error(error);
-                    reject(error);
-                });
             } else {
-                resolve();
+                console.log('login..')
+                // 使用默认账号登录，开发调试使用
+                AV.User.logIn('1if7jp52qx9771hllat1rvfqt', '123')
+                    .then(user => {
+                        user.fetch({
+                            include: ['info'],
+                        })
+                        .then(user => {
+                            resolve(user);
+                        })
+                        .catch(error => {
+                            reject(error)
+                        });
+                    }).catch(error => {
+                        reject(error);
+                    });
             }
         });
     },
 
     myself() {
-        if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME)
-            return AV.User.current();
-        return null;
+        return AV.User.current();
     },
 
     // 获取
     myUserInfo() {
-        if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME)
-            return AV.User.current().get('nickName');
-        return null;
+        return AV.User.current().get('nickName');
     },
 
     // 获取详细信息
@@ -194,28 +204,6 @@ const SDK = {
         }
     },
 
-    getMyInfo() {
-        return new Promise((resolve, reject) => {
-            if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
-                AV.User.current().fetch({
-                    include: ['info'],
-                }).then(user => {
-                    if (user.get('info')) {
-                        resolve(user.get('info'));
-                    } else {
-                        const userInfo = new AV.Object('UserInfo');
-                        resolve(userInfo);
-                    }
-                }).catch(error => {
-                    console.error(error);
-                    reject(error);
-                });
-            } else {
-                resolve(null);
-            }
-        });
-    },
-
     saveInfo(userInfo) {
         return new Promise((resolve, reject) => {
             if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
@@ -233,8 +221,6 @@ const SDK = {
         });
     },
 
-    
-
     submitScore(score) {
         // 向排行榜提交分数
         return new Promise((resolve, reject) => {
@@ -250,6 +236,8 @@ const SDK = {
                     console.error(error);
                     reject(error);
                 });
+            } else {
+                reject(error);
             }
         });
     },
