@@ -1,4 +1,5 @@
 import Constants from './Constants';
+import md5 from 'blueimp-md5';
 
 let AV = null;
 
@@ -355,6 +356,24 @@ const SDK = {
         if (cc.sys.browserType === cc.sys.BROWSER_TYPE_WECHAT_GAME) {
             wx.hideLoading();
         }
+    },
+
+    startGame() {
+        return AV.Cloud.run('startGame', {});
+    },
+
+    endGame(id, score, counts, taps) {
+        const timestamp = Date.now();
+        const str = `${id}${score}${timestamp}`;
+        const signature = md5(str);
+        return AV.Cloud.run('endGame', {
+            id,
+            score,
+            counts,
+            timestamp,
+            signature,
+            taps,
+        })
     }
 };
 

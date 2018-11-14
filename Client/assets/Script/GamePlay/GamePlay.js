@@ -9,6 +9,7 @@ import Constants, { COUNT_DOWN } from '../Constants'
 import SDK from '../SDK';
 import Cakes from './Cakes';
 import BubbleLayerCtrl from './BubbleLayerCtrl';
+// import seedrandom from 'seedrandom';
 
 /**
  * 游戏控制器
@@ -59,39 +60,48 @@ cc.Class({
                 init: {
                     _onEnter: function () {
                         cc.log('init _onEnter');
-                        cc.director.getCollisionManager().enabled = true;
-                        this._node.on(Event.GAME_OVER, this._onGameOver, this);
-                        this._node.on(Event.SHARE_SUCCESSFULLY, this._onShareSuccessfully, this);
-                        this._node.on(Event.SHARE_FAILED, this._onShareFailed, this);
-                        this._node.on(Event.HOME, this._onHome, this);
-                        this._node.on(Event.REPLAY, this._onReplay, this);
-                        this._node.on(Event.CAPTURE, this._onCapture, this);
-                        this._cakes = Object.assign({}, Cakes);
-                        // 加载资源
-                        const resArr = [];
-                        Object.keys(this._cakes).forEach((key) => {
-                            const cake = this._cakes[key];
-                            resArr.push(cake.prefab);
-                            resArr.push(cake.bombPrefab);
-                        });
-                        cc.loader.loadResDir('Prefabs', (err) => {
-                            if (err) {
-                                console.error(err);
-                                return;
-                            }
-                            // 初始化对象池
-                            Object.keys(this._cakes).forEach((key) => {
-                                const cake = this._cakes[key];
-                                const { prefab, bombPrefab, bombPoolClass } = cake;
-                                cake.pool = this._newNodePool(cc.loader.getRes(prefab));
-                                cake.bombPool = this._newNodePool(cc.loader.getRes(bombPrefab), bombPoolClass);
+                        // 请求开始游戏
+                        SDK.startGame()
+                            .then(result => {
+                                const { id, seed } = result;
+                                this._id = id;
+                                // this._seed = seed;
+                                // this._rng = Math.seedrandom(seed);
+                                // 初始化游戏
+                                cc.director.getCollisionManager().enabled = true;
+                                this._node.on(Event.GAME_OVER, this._onGameOver, this);
+                                this._node.on(Event.SHARE_SUCCESSFULLY, this._onShareSuccessfully, this);
+                                this._node.on(Event.SHARE_FAILED, this._onShareFailed, this);
+                                this._node.on(Event.HOME, this._onHome, this);
+                                this._node.on(Event.REPLAY, this._onReplay, this);
+                                this._node.on(Event.CAPTURE, this._onCapture, this);
+                                this._cakes = Object.assign({}, Cakes);
+                                // 加载资源
+                                const resArr = [];
+                                Object.keys(this._cakes).forEach((key) => {
+                                    const cake = this._cakes[key];
+                                    resArr.push(cake.prefab);
+                                    resArr.push(cake.bombPrefab);
+                                });
+                                cc.loader.loadResDir('Prefabs', (err) => {
+                                    if (err) {
+                                        console.error(err);
+                                        return;
+                                    }
+                                    // 初始化对象池
+                                    Object.keys(this._cakes).forEach((key) => {
+                                        const cake = this._cakes[key];
+                                        const { prefab, bombPrefab, bombPoolClass } = cake;
+                                        cake.pool = this._newNodePool(cc.loader.getRes(prefab));
+                                        cake.bombPool = this._newNodePool(cc.loader.getRes(bombPrefab), bombPoolClass);
+                                    });
+                                    // 初始话 UI
+                                    this._ui.init();
+                                    setTimeout(() => {
+                                        this.transition('prepare');
+                                    }, 100);
+                                });
                             });
-                            // 初始话 UI
-                            this._ui.init();
-                            setTimeout(() => {
-                                this.transition('prepare');
-                            }, 100);
-                        });
                     },
                 },
                 // 准备状态：倒计时
@@ -116,6 +126,7 @@ cc.Class({
                 // 游戏状态：
                 play: {
                     _onEnter: function () {
+                        this._taps = [];
                         cc.director.resume();
                         this._ui.startGame();
                         this._gamePlay.bubbleCtrl.spawnBubbles();
@@ -175,8 +186,13 @@ cc.Class({
                 over: {
                     _onEnter: function () {
                         this._ui.gameOver(this._score.value);
-                        SDK.submitScore(this._score.value)
-                            .catch(console.error);
+                        SDK.endGame(this._id, this._score.value, this._score.cakes, this._taps)
+                            .then(() => {
+
+                            })
+                            .catch(error => {
+                                console.error(error);
+                            });
                     },
                     home: function () {
                         cc.director.loadScene('mainmenu');
@@ -278,6 +294,7 @@ cc.Class({
                 this._score.cakes[id] += 1;
                 this._score.value += score;
                 this._gamePlay.ui.updateScore(this._score.value);
+                this._taps.push(id);
             },
         
             _onGameOver() {
