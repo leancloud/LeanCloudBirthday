@@ -121,7 +121,8 @@ cc.Class({
                                 setTimeout(() => {
                                     this.transition('play');
                                 }, COUNT_DOWN * 1000);
-                            });
+                            })
+                            .catch(console.error);
                     },
                 },
                 // 游戏状态：

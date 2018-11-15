@@ -20,8 +20,6 @@ CAKE_SCORES = {
   D: 5,
 };
 CAKE_KEYS = [ 'A', 'B', 'C', 'D' ];
-// 最大分数
-const MAX_SCORE = 1000;
 // 允许最大作弊值
 const MAX_CHEAT_COUNT = 10;
 
@@ -94,10 +92,6 @@ AV.Cloud.define('endGame', request => {
       throw new Error('arguments error');
     }
     if (!checkSignature(id, score, timestamp, signature)) {
-      markUser(currentUser);
-      throw new Error('arguments error');
-    }
-    if (!checkMaxScore(score)) {
       markUser(currentUser);
       throw new Error('arguments error');
     }
@@ -201,31 +195,6 @@ function checkSignature(id, score, timestamp, signature) {
   const str = `${id}${score}${timestamp}`;
   const calcSignature = md5(str);
   return calcSignature === signature;
-}
-
-/**
- * 检测分数是否在合理范围
- * @param {*} seed 随机种子
- * @param {*} score 当前分数
- */
-function checkMaxScore(score) {
-  // if (!_.isNumber(seed)) {
-  //   return false;
-  // }
-  if (!_.isNumber(score)) {
-    return false;
-  }
-  // const count = Math.ceil(MAX_GAME_DURATION / SPAWN_CAKE_SPEED);
-  // let maxScore = 0;
-  // const rng = new Math.seedrandom(seed);
-  // TODO 计算最大分数
-  // for (let i = 0; i < count; i++) {
-  //   const index = Math.abs(rng.int32()) % CAKE_CATEGORY_COUNT;
-  //   maxScore += CAKE_SCORES[index];
-  //   console.log(`score: ${CAKE_SCORES[index]}`);
-  // }
-  // maxScore = MAX_SCORE;
-  return score < MAX_SCORE;
 }
 
 /**
