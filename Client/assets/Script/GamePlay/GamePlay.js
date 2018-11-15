@@ -60,73 +60,73 @@ cc.Class({
                 init: {
                     _onEnter: function () {
                         cc.log('init _onEnter');
-                        // 请求开始游戏
-                        SDK.startGame()
-                            .then(result => {
-                                const { id, seed } = result;
-                                this._id = id;
-                                // this._seed = seed;
-                                // this._rng = Math.seedrandom(seed);
-                                // 初始化游戏
-                                cc.director.getCollisionManager().enabled = true;
-                                this._node.on(Event.GAME_OVER, this._onGameOver, this);
-                                this._node.on(Event.SHARE_SUCCESSFULLY, this._onShareSuccessfully, this);
-                                this._node.on(Event.SHARE_FAILED, this._onShareFailed, this);
-                                this._node.on(Event.HOME, this._onHome, this);
-                                this._node.on(Event.REPLAY, this._onReplay, this);
-                                this._node.on(Event.CAPTURE, this._onCapture, this);
-                                this._cakes = Object.assign({}, Cakes);
-                                // 加载资源
-                                const resArr = [];
-                                Object.keys(this._cakes).forEach((key) => {
-                                    const cake = this._cakes[key];
-                                    resArr.push(cake.prefab);
-                                    resArr.push(cake.bombPrefab);
-                                });
-                                cc.loader.loadResDir('Prefabs', (err) => {
-                                    if (err) {
-                                        console.error(err);
-                                        return;
-                                    }
-                                    // 初始化对象池
-                                    Object.keys(this._cakes).forEach((key) => {
-                                        const cake = this._cakes[key];
-                                        const { prefab, bombPrefab, bombPoolClass } = cake;
-                                        cake.pool = this._newNodePool(cc.loader.getRes(prefab));
-                                        cake.bombPool = this._newNodePool(cc.loader.getRes(bombPrefab), bombPoolClass);
-                                    });
-                                    // 初始话 UI
-                                    this._ui.init();
-                                    setTimeout(() => {
-                                        this.transition('prepare');
-                                    }, 100);
-                                });
+                        // 初始化游戏
+                        cc.director.getCollisionManager().enabled = true;
+                        this._node.on(Event.GAME_OVER, this._onGameOver, this);
+                        this._node.on(Event.SHARE_SUCCESSFULLY, this._onShareSuccessfully, this);
+                        this._node.on(Event.SHARE_FAILED, this._onShareFailed, this);
+                        this._node.on(Event.HOME, this._onHome, this);
+                        this._node.on(Event.REPLAY, this._onReplay, this);
+                        this._node.on(Event.CAPTURE, this._onCapture, this);
+                        this._cakes = Object.assign({}, Cakes);
+                        // 加载资源
+                        const resArr = [];
+                        Object.keys(this._cakes).forEach((key) => {
+                            const cake = this._cakes[key];
+                            resArr.push(cake.prefab);
+                            resArr.push(cake.bombPrefab);
+                        });
+                        cc.loader.loadResDir('Prefabs', (err) => {
+                            if (err) {
+                                console.error(err);
+                                return;
+                            }
+                            // 初始化对象池
+                            Object.keys(this._cakes).forEach((key) => {
+                                const cake = this._cakes[key];
+                                const { prefab, bombPrefab, bombPoolClass } = cake;
+                                cake.pool = this._newNodePool(cc.loader.getRes(prefab));
+                                cake.bombPool = this._newNodePool(cc.loader.getRes(bombPrefab), bombPoolClass);
                             });
+                            // 初始话 UI
+                            this._ui.init();
+                            setTimeout(() => {
+                                this.transition('prepare');
+                            }, 100);
+                        });
                     },
                 },
                 // 准备状态：倒计时
                 prepare: {
                     _onEnter: function () {
-                        this._score = {
-                            value: 0,
-                            cakes: {
-                                BOMB: 0,
-                                CAKE1: 0,
-                                CAKE2: 0,
-                                CAKE3: 0,
-                            },
-                        };
-                        this._ui.prepare(this._score.value, Constants.GAME_PLAY_TIME);
-                        this._ui.showCountDown();
-                        setTimeout(() => {
-                            this.transition('play');
-                        }, COUNT_DOWN * 1000);
+                        // 请求开始游戏
+                        SDK.startGame()
+                            .then(result => {
+                                const { id, cakeList } = result;
+                                this._id = id;
+                                this._cakeList = cakeList;
+                                this._cakeIndex = 0;
+                                this._taps = [];
+                                this._score = {
+                                    value: 0,
+                                    cakes: {
+                                        A: 0,
+                                        B: 0,
+                                        C: 0,
+                                        D: 0,
+                                    },
+                                };
+                                this._ui.prepare(this._score.value, Constants.GAME_PLAY_TIME);
+                                this._ui.showCountDown();
+                                setTimeout(() => {
+                                    this.transition('play');
+                                }, COUNT_DOWN * 1000);
+                            });
                     },
                 },
                 // 游戏状态：
                 play: {
                     _onEnter: function () {
-                        this._taps = [];
                         cc.director.resume();
                         this._ui.startGame();
                         this._gamePlay.bubbleCtrl.spawnBubbles();
@@ -223,27 +223,29 @@ cc.Class({
 
             _startSpawn: function () {
                 return setInterval(() => {
-                    const cake = this._getCake();
+                    const cake = this._spawnCake();
                     this._gamePlay.scene.addChild(cake);
                     const halfWidth = this._node.width * 0.5 - 50;
                     const x = getRandomInt(-halfWidth, halfWidth);
                     const y = this._node.height * 0.5;
                     cake.position = cc.v2(x, y);
                     const cakeCtrl = cake.getComponent(CakeCtrl);
+                    cakeCtrl.index = this._cakeIndex++;
                     cakeCtrl.speed = getRandomInt(-Constants.MAX_FALL_SPEED, -Constants.MIN_FALL_SPEED);
                 }, Constants.SPAWN_RATE * 1000);
             },
 
-            _getCake() {
-                const weights = [];
-                Object.keys(this._cakes).forEach((key) => {
-                    const { weight } = this._cakes[key];
-                    for (let i = 0; i < weight; i++) {
-                        weights.push(key);
-                    }
-                });
-                const random = getRandomInt(0, weights.length);
-                const key = weights[random];
+            _spawnCake() {
+                // const weights = [];
+                // Object.keys(this._cakes).forEach((key) => {
+                //     const { weight } = this._cakes[key];
+                //     for (let i = 0; i < weight; i++) {
+                //         weights.push(key);
+                //     }
+                // });
+                // const random = getRandomInt(0, weights.length);
+                // const key = weights[random];
+                const key = this._cakeList[this._cakeIndex];
                 const cake = this._cakes[key];
                 const { prefab, pool } = cake;
                 let cakeNode = pool.get();
@@ -281,8 +283,8 @@ cc.Class({
             },
         
             _onCakeTap(detail) {
-                cc.log('on cake tap');
-                const { cake, id } = detail;
+                const { cake, id, index } = detail;
+                cc.log(`on cake tap: ${id}, ${index}`);
                 const { score, pool, bombPool, bombPrefab } = this._cakes[id];
                 // 爆炸动画
                 const bomb = this._getBomb(bombPool, bombPrefab);
@@ -294,7 +296,7 @@ cc.Class({
                 this._score.cakes[id] += 1;
                 this._score.value += score;
                 this._gamePlay.ui.updateScore(this._score.value);
-                this._taps.push(id);
+                this._taps.push(index);
             },
         
             _onGameOver() {

@@ -14,11 +14,12 @@ const MAX_GAME_DURATION = 20;
 const SPAWN_CAKE_SPEED = 0.1;
 // 蛋糕分数
 CAKE_SCORES = {
-  BOMB: -2,
-  CAKE1: 1,
-  CAKE2: 3,
-  CAKE3: 5,
+  A: -2,
+  B: 1,
+  C: 3,
+  D: 5,
 };
+CAKE_KEYS = [ 'A', 'B', 'C', 'D' ];
 // 最大分数
 const MAX_SCORE = 1000;
 // 允许最大作弊值
@@ -45,12 +46,15 @@ AV.Cloud.define('startGame', request => {
     // 生成随机种子
     const seed = seedrandom(Date.now()).int32();
     game.set('seed', seed);
+    // 生成蛋糕序列
+    const cakeList = spawnCakeList(MAX_GAME_DURATION, SPAWN_CAKE_SPEED, seed);
+    game.set('cakeList', cakeList);
     game.save()
       .then((g) => {
         // 下发游戏 id 和随机种子
         resolve({
           id: g.id,
-          seed,
+          cakeList,
         });
       })
       .catch(error => {
@@ -87,17 +91,16 @@ AV.Cloud.define('endGame', request => {
     console.log(taps);
     if (!checkScore(counts, score)) {
       markUser(currentUser);
-      throw new Error('invalid score');
+      throw new Error('arguments error');
     }
     if (!checkSignature(id, score, timestamp, signature)) {
       markUser(currentUser);
-      throw new Error('invalid score');
+      throw new Error('arguments error');
     }
     if (!checkMaxScore(score)) {
       markUser(currentUser);
-      throw new Error('invalid score');
+      throw new Error('arguments error');
     }
-    console.log('continue');
     const query = new AV.Query('Game');
     query.get(id)
       .then(game => {
@@ -109,7 +112,11 @@ AV.Cloud.define('endGame', request => {
           markUser(currentUser);
           throw new Error('long time');
         }
-        const seed = game.get('seed');
+        const cakeList = game.get('cakeList');
+        if (!checkScoreByCakeList(cakeList, taps, score)) {
+          markUser(currentUser);
+          throw new Error('arguments error');
+        }
         // 提交分数
         scoreInLeaderBoard = calcScoreInLeaderBoard(score);
         AV.Leaderboard.updateStatistics(currentUser, {
@@ -161,6 +168,18 @@ function checkScore(counts, score) {
   let calcScore = 0;
   _.forEach(counts, (val, k) => {
     calcScore += val * CAKE_SCORES[k];
+  });
+  return calcScore === score;
+}
+
+function checkScoreByCakeList(cakeList, taps, score) {
+  if (!_.isArray(taps)) {
+    return false;
+  }
+  let calcScore = 0;
+  _.forEach(taps, (val) => {
+    const cakeId = cakeList[val];
+    calcScore += CAKE_SCORES[cakeId];
   });
   return calcScore === score;
 }
@@ -217,4 +236,22 @@ function calcScoreInLeaderBoard(score) {
   const now = (new Date()).getTime();
   const scoreInLeaderBoard = parseInt(`${score}${10000000000000 - now}`);
   return scoreInLeaderBoard;
+}
+
+/**
+ * 生成蛋糕序列
+ * @param {*} duration 游戏时长
+ * @param {*} rate 生成频率
+ * @param {*} seed 随机种子
+ */
+function spawnCakeList(duration, rate, seed) {
+  const count = Math.ceil(duration / rate);
+  const rng = new Math.seedrandom(seed);
+  cakes = [];
+  for (let i = 0; i < count; i++) {
+    const index = Math.abs(rng.int32()) % CAKE_KEYS.length;
+    const key = CAKE_KEYS[index];
+    cakes.push(key);
+  }
+  return cakes;
 }
