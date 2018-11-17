@@ -8,6 +8,7 @@ cc.Class({
 
     properties: {
         id: '',
+        index: -1,
         speed: 0,
     },
 
@@ -35,6 +36,7 @@ cc.Class({
         this.node.emit(Event.CAKE_ON_TAP, {
             cake: this.node,
             id: this.id,
+            index: this.index,
         });
     }
 });
