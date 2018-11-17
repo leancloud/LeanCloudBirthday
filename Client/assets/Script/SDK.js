@@ -51,6 +51,11 @@ const SDK = {
         });
     },
 
+    getRule() {
+        const query = new AV.Query('Rule');
+        return query.first();
+    },
+
     login() {
         return new Promise((resolve, reject) => {
             // 微信登录

@@ -76,7 +76,7 @@ cc.Class({
                             resArr.push(cake.prefab);
                             resArr.push(cake.bombPrefab);
                         });
-                        cc.loader.loadResDir('Prefabs', (err) => {
+                        cc.loader.loadResDir('Res', (err) => {
                             if (err) {
                                 console.error(err);
                                 return;
@@ -133,8 +133,10 @@ cc.Class({
                         this._gamePlay.bubbleCtrl.spawnBubbles();
                         this._spawnTimer = this._startSpawn();
                         setTimeout(() => {
-                            this.transition('overForShare');
+                            this.transition('over');
                         }, Constants.GAME_PLAY_TIME * 1000);
+                        const bg = cc.loader.getRes('Res/Audio/GameBG');
+                        cc.audioEngine.play(bg, true, 1);
                     },
                     _onExit: function () {
                         clearInterval(this._spawnTimer);
@@ -286,7 +288,7 @@ cc.Class({
             _onCakeTap(detail) {
                 const { cake, id, index } = detail;
                 cc.log(`on cake tap: ${id}, ${index}`);
-                const { score, pool, bombPool, bombPrefab } = this._cakes[id];
+                const { score, pool, bombPool, bombPrefab, bombAudio } = this._cakes[id];
                 // 爆炸动画
                 const bomb = this._getBomb(bombPool, bombPrefab);
                 this._gamePlay.background.addChild(bomb);
@@ -298,6 +300,9 @@ cc.Class({
                 this._score.value += score;
                 this._gamePlay.ui.updateScore(this._score.value);
                 this._taps.push(index);
+                // 播放音效
+                const audio = cc.loader.getRes(bombAudio);
+                cc.audioEngine.play(audio, false, 1);
             },
         
             _onGameOver() {
@@ -324,5 +329,9 @@ cc.Class({
                 this.handle('capture');
             },
         });
+    },
+
+    onDestroy() {
+        cc.audioEngine.stopAll();
     },
 });

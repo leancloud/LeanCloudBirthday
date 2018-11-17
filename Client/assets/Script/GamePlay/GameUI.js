@@ -35,10 +35,10 @@ cc.Class({
     },
 
     init() {
-        this._gameOverSharePanel = this._addChild('Prefabs/GameOverForSharePanel');
-        this._gameOverPanel = this._addChild('Prefabs/GameOverPanel');
-        this._leaderBoardPanel = this._addChild('Prefabs/LeaderBoardPanel');
-        this._capturePanel = this._addChild('Prefabs/ShareCapturePanel');
+        this._gameOverSharePanel = this._addChild('Res/Prefabs/GameOverForSharePanel');
+        this._gameOverPanel = this._addChild('Res/Prefabs/GameOverPanel');
+        this._leaderBoardPanel = this._addChild('Res/Prefabs/LeaderBoardPanel');
+        this._capturePanel = this._addChild('Res/Prefabs/ShareCapturePanel');
     },
 
     _addChild(res) {
