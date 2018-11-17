@@ -461,7 +461,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "75WTuMtDVDkYfGCeSrzmsH",
+    "fileId": "60DrOgJWZAhaHyuDHJqcWh",
     "sync": false
   },
   {
@@ -716,7 +716,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "8bpJHcc+dHubJlBBkB5Cii",
+    "fileId": "42sa1a7wJAWZi3b6umL6B8",
     "sync": false
   },
   {
@@ -815,7 +815,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "08vdBriwFDz55TpakFyvyl",
+    "fileId": "fcMRIAFMxKQbRd4JO7cqhp",
     "sync": false
   },
   {
@@ -919,7 +919,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "191dPmdOZL+phfXOb43SrU",
+    "fileId": "57nK5/bvdFzocBlxfqgQ8M",
     "sync": false
   },
   {
@@ -1018,7 +1018,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "8c8OX+ecBJEootlTWOV8tr",
+    "fileId": "dac38EhL5LvqMxDCtrTR4x",
     "sync": false
   },
   {
@@ -1122,7 +1122,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "1fTTwmwt9K+4W5NCyV/bJh",
+    "fileId": "e8xJMpTURKOZjS6sRNc3OY",
     "sync": false
   },
   {
@@ -1221,7 +1221,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "83yZFR1bRIZLgpIYmkbprl",
+    "fileId": "ddAuN2ma1Ir566X/eJpJQf",
     "sync": false
   },
   {
@@ -1325,7 +1325,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "d79hN3k2lL+L9yCJyQXHSs",
+    "fileId": "ddeoBTUd1AJao284fpHvKJ",
     "sync": false
   },
   {
@@ -1424,7 +1424,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "f1KrxNdpJALYZ5PJNJqPGM",
+    "fileId": "43Lc/HTsJDcIaWlyd9c4pY",
     "sync": false
   },
   {
@@ -1528,7 +1528,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "1cqKjcTflHw7rjDGdfbRSI",
+    "fileId": "caEQ/jDgREyLqUjuEnOU0u",
     "sync": false
   },
   {
@@ -1627,7 +1627,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "3fG98aPQdByKZ5KF+PUTZ6",
+    "fileId": "02bg7tlfNHtrTVuTSW8KHy",
     "sync": false
   },
   {
@@ -1726,7 +1726,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "bf1rEadI9AvYpwj59Kbivj",
+    "fileId": "e1iukxTQdP7Y3GSo00BvNx",
     "sync": false
   },
   {
@@ -1992,7 +1992,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "7fEZFOBJtOZaFAgdOteR3/",
+    "fileId": "93uqk5F5pInqYWRjrERZfY",
     "sync": false
   },
   {
@@ -2069,8 +2069,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "（活动时间待定），活动结束后游戏成绩将不",
-    "_N$string": "（活动时间待定），活动结束后游戏成绩将不",
+    "_string": "，活动结束后游戏成绩将不计入本次活动的排",
+    "_N$string": "，活动结束后游戏成绩将不计入本次活动的排",
     "_fontSize": 28,
     "_lineHeight": 45,
     "_enableWrapText": true,
@@ -2091,7 +2091,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "a9cEzWMVRDt4GUtAenSg62",
+    "fileId": "70tbClDHBAzbqoTWz/Kr18",
     "sync": false
   },
   {
@@ -2122,7 +2122,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 308,
+      "width": 84,
       "height": 45
     },
     "_anchorPoint": {
@@ -2168,8 +2168,8 @@
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 771,
     "_useOriginalSize": true,
-    "_string": "计入本次活动的排行榜。",
-    "_N$string": "计入本次活动的排行榜。",
+    "_string": "行榜。",
+    "_N$string": "行榜。",
     "_fontSize": 28,
     "_lineHeight": 45,
     "_enableWrapText": true,
@@ -2190,7 +2190,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "39h0ExRXBOt7UaSYETspgK",
+    "fileId": "d71F0SgWNJj4aQU1c4a0DJ",
     "sync": false
   },
   {
@@ -2289,7 +2289,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "6cwkQosXFGOayplT47UFqr",
+    "fileId": "7ccGUZABNIh4MlQGaZ/1ny",
     "sync": false
   },
   {
@@ -2388,7 +2388,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "dbJMG43y1OR4J0OtVnTpN/",
+    "fileId": "a7XHxPMmtOJLXreRSqQbho",
     "sync": false
   },
   {
@@ -2487,7 +2487,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "d8RH8cZixDK7D7n1hztmeI",
+    "fileId": "17SmVPyGhJAqy4u7BDLyPl",
     "sync": false
   },
   {
@@ -2586,7 +2586,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "4eJI1zVmhDlI59JVxnp1KT",
+    "fileId": "a13GPKVMlKNKnql6+0/42l",
     "sync": false
   },
   {
@@ -2685,7 +2685,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "178vlFxPhDIK+KDCkdUVc/",
+    "fileId": "dcrXsjU1VPZJ9GaE+9Tw06",
     "sync": false
   },
   {
@@ -2784,7 +2784,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "127uez7jtE06S7/xi7LIvC",
+    "fileId": "45ujnnalFJA6gMeR2pfvMP",
     "sync": false
   },
   {
@@ -2883,7 +2883,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "cbPVLr6NJBK75VKiEsqB1E",
+    "fileId": "e73pmzC7NPmbzamKZmQUzy",
     "sync": false
   },
   {
@@ -2982,7 +2982,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "c76hfYxddN6J/zZbWDGi7T",
+    "fileId": "bcJeBg+KFIGa6yzqDPLAWy",
     "sync": false
   },
   {
@@ -3081,7 +3081,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "1dj8GL7QFBaKjvJ7WKtvqg",
+    "fileId": "7eR/8fwbpAVpPieeMgKZoS",
     "sync": false
   },
   {
@@ -3180,7 +3180,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "08Xwi9MORGtLE8V8MoTAcY",
+    "fileId": "65AcmaI2JIELrsXJ5vtc0E",
     "sync": false
   },
   {
@@ -3279,7 +3279,7 @@
     "asset": {
       "__uuid__": "05869ea9-3e6e-47a6-a079-7d4cd5c654a7"
     },
-    "fileId": "67dgJkt0BOe4jdl4UXLmru",
+    "fileId": "a6qd3dqApER6frHxQwOvns",
     "sync": false
   },
   {
@@ -3290,7 +3290,7 @@
       "__id__": 51
     },
     "_enabled": true,
-    "_N$string": "<color=#000000>2.\t活动时间：\n（活动时间待定），活动结束后游戏成绩将不计入本次活动的排行榜。\n3.\t每日游戏次数不限，排行榜计入单局游戏最高分数。\n4.\t奖品按照排行榜顺序依次发放，请在排行榜页面填写收件信息，未填写视为放弃奖品，奖品不顺延。\n5.\t奖品安排：\n\t第1名  Switch 一台\n\t第2-4名  小米智能音箱\n\t第5-10名  方糖智能音箱\n\t第11-30名  周边笔记本、杯子、收纳包\n\t第31-50名  周边笔记本、束口袋</color>",
+    "_N$string": "<color=#000000>2.\t活动时间：\n，活动结束后游戏成绩将不计入本次活动的排行榜。\n3.\t每日游戏次数不限，排行榜计入单局游戏最高分数。\n4.\t奖品按照排行榜顺序依次发放，请在排行榜页面填写收件信息，未填写视为放弃奖品，奖品不顺延。\n5.\t奖品安排：\n\t第1名  Switch 一台\n\t第2-4名  小米智能音箱\n\t第5-10名  方糖智能音箱\n\t第11-30名  周边笔记本、杯子、收纳包\n\t第31-50名  周边笔记本、束口袋</color>",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 28,
     "_N$font": null,
@@ -3757,6 +3757,9 @@
       "__id__": 1
     },
     "_enabled": true,
+    "ruleText": {
+      "__id__": 94
+    },
     "_id": ""
   },
   {

@@ -28,6 +28,7 @@ cc.Class({
             }
         }, 1000);
         const audio = cc.loader.getRes('Res/Audio/CountDown');
+        cc.audioEngine.stopAll();
         cc.audioEngine.play(audio, false, 1);
     },
 

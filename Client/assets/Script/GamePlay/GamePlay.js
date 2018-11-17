@@ -81,8 +81,6 @@ cc.Class({
                                 console.error(err);
                                 return;
                             }
-                            const bg = cc.loader.getRes('Res/Audio/GameBG');
-                            cc.audioEngine.play(bg, true, 1);
                             // 初始化对象池
                             Object.keys(this._cakes).forEach((key) => {
                                 const cake = this._cakes[key];
@@ -137,6 +135,8 @@ cc.Class({
                         setTimeout(() => {
                             this.transition('over');
                         }, Constants.GAME_PLAY_TIME * 1000);
+                        const bg = cc.loader.getRes('Res/Audio/GameBG');
+                        cc.audioEngine.play(bg, true, 1);
                     },
                     _onExit: function () {
                         clearInterval(this._spawnTimer);
@@ -286,15 +286,9 @@ cc.Class({
             },
         
             _onCakeTap(detail) {
-<<<<<<< HEAD
-                cc.log('on cake tap');
-                const { cake, id } = detail;
-                const { score, pool, bombPool, bombPrefab, bombAudio } = this._cakes[id];
-=======
                 const { cake, id, index } = detail;
                 cc.log(`on cake tap: ${id}, ${index}`);
-                const { score, pool, bombPool, bombPrefab } = this._cakes[id];
->>>>>>> 19a72e577f95e9a1822aaa68dcfd020139e24450
+                const { score, pool, bombPool, bombPrefab, bombAudio } = this._cakes[id];
                 // 爆炸动画
                 const bomb = this._getBomb(bombPool, bombPrefab);
                 this._gamePlay.background.addChild(bomb);
@@ -305,13 +299,10 @@ cc.Class({
                 this._score.cakes[id] += 1;
                 this._score.value += score;
                 this._gamePlay.ui.updateScore(this._score.value);
-<<<<<<< HEAD
+                this._taps.push(index);
                 // 播放音效
                 const audio = cc.loader.getRes(bombAudio);
                 cc.audioEngine.play(audio, false, 1);
-=======
-                this._taps.push(index);
->>>>>>> 19a72e577f95e9a1822aaa68dcfd020139e24450
             },
         
             _onGameOver() {
