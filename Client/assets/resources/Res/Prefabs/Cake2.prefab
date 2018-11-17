@@ -134,7 +134,8 @@
       "__id__": 1
     },
     "_enabled": true,
-    "id": "CAKE2",
+    "id": "C",
+    "index": -1,
     "speed": 0,
     "_id": ""
   },

@@ -1,0 +1,18 @@
+{
+  "name": "Client",
+  "version": "1.0.0",
+  "description": "Hello world new project template.",
+  "main": "index.js",
+  "dependencies": {
+    "blueimp-md5": "^2.10.0",
+    "leancloud-storage": "^3.11.0",
+    "machina": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

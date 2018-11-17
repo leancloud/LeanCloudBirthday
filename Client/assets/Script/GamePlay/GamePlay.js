@@ -9,6 +9,7 @@ import Constants, { COUNT_DOWN } from '../Constants'
 import SDK from '../SDK';
 import Cakes from './Cakes';
 import BubbleLayerCtrl from './BubbleLayerCtrl';
+// import seedrandom from 'seedrandom';
 
 /**
  * 游戏控制器
@@ -59,6 +60,7 @@ cc.Class({
                 init: {
                     _onEnter: function () {
                         cc.log('init _onEnter');
+                        // 初始化游戏
                         cc.director.getCollisionManager().enabled = true;
                         this._node.on(Event.GAME_OVER, this._onGameOver, this);
                         this._node.on(Event.SHARE_SUCCESSFULLY, this._onShareSuccessfully, this);
@@ -99,20 +101,30 @@ cc.Class({
                 // 准备状态：倒计时
                 prepare: {
                     _onEnter: function () {
-                        this._score = {
-                            value: 0,
-                            cakes: {
-                                BOMB: 0,
-                                CAKE1: 0,
-                                CAKE2: 0,
-                                CAKE3: 0,
-                            },
-                        };
-                        this._ui.prepare(this._score.value, Constants.GAME_PLAY_TIME);
-                        this._ui.showCountDown();
-                        setTimeout(() => {
-                            this.transition('play');
-                        }, COUNT_DOWN * 1000);
+                        // 请求开始游戏
+                        SDK.startGame()
+                            .then(result => {
+                                const { id, cakeList } = result;
+                                this._id = id;
+                                this._cakeList = cakeList;
+                                this._cakeIndex = 0;
+                                this._taps = [];
+                                this._score = {
+                                    value: 0,
+                                    cakes: {
+                                        A: 0,
+                                        B: 0,
+                                        C: 0,
+                                        D: 0,
+                                    },
+                                };
+                                this._ui.prepare(this._score.value, Constants.GAME_PLAY_TIME);
+                                this._ui.showCountDown();
+                                setTimeout(() => {
+                                    this.transition('play');
+                                }, COUNT_DOWN * 1000);
+                            })
+                            .catch(console.error);
                     },
                 },
                 // 游戏状态：
@@ -177,8 +189,13 @@ cc.Class({
                 over: {
                     _onEnter: function () {
                         this._ui.gameOver(this._score.value);
-                        SDK.submitScore(this._score.value)
-                            .catch(console.error);
+                        SDK.endGame(this._id, this._score.value, this._score.cakes, this._taps)
+                            .then(() => {
+
+                            })
+                            .catch(error => {
+                                console.error(error);
+                            });
                     },
                     home: function () {
                         cc.director.loadScene('mainmenu');
@@ -209,27 +226,29 @@ cc.Class({
 
             _startSpawn: function () {
                 return setInterval(() => {
-                    const cake = this._getCake();
+                    const cake = this._spawnCake();
                     this._gamePlay.scene.addChild(cake);
                     const halfWidth = this._node.width * 0.5 - 50;
                     const x = getRandomInt(-halfWidth, halfWidth);
                     const y = this._node.height * 0.5;
                     cake.position = cc.v2(x, y);
                     const cakeCtrl = cake.getComponent(CakeCtrl);
+                    cakeCtrl.index = this._cakeIndex++;
                     cakeCtrl.speed = getRandomInt(-Constants.MAX_FALL_SPEED, -Constants.MIN_FALL_SPEED);
                 }, Constants.SPAWN_RATE * 1000);
             },
 
-            _getCake() {
-                const weights = [];
-                Object.keys(this._cakes).forEach((key) => {
-                    const { weight } = this._cakes[key];
-                    for (let i = 0; i < weight; i++) {
-                        weights.push(key);
-                    }
-                });
-                const random = getRandomInt(0, weights.length);
-                const key = weights[random];
+            _spawnCake() {
+                // const weights = [];
+                // Object.keys(this._cakes).forEach((key) => {
+                //     const { weight } = this._cakes[key];
+                //     for (let i = 0; i < weight; i++) {
+                //         weights.push(key);
+                //     }
+                // });
+                // const random = getRandomInt(0, weights.length);
+                // const key = weights[random];
+                const key = this._cakeList[this._cakeIndex];
                 const cake = this._cakes[key];
                 const { prefab, pool } = cake;
                 let cakeNode = pool.get();
@@ -267,9 +286,15 @@ cc.Class({
             },
         
             _onCakeTap(detail) {
+<<<<<<< HEAD
                 cc.log('on cake tap');
                 const { cake, id } = detail;
                 const { score, pool, bombPool, bombPrefab, bombAudio } = this._cakes[id];
+=======
+                const { cake, id, index } = detail;
+                cc.log(`on cake tap: ${id}, ${index}`);
+                const { score, pool, bombPool, bombPrefab } = this._cakes[id];
+>>>>>>> 19a72e577f95e9a1822aaa68dcfd020139e24450
                 // 爆炸动画
                 const bomb = this._getBomb(bombPool, bombPrefab);
                 this._gamePlay.background.addChild(bomb);
@@ -280,9 +305,13 @@ cc.Class({
                 this._score.cakes[id] += 1;
                 this._score.value += score;
                 this._gamePlay.ui.updateScore(this._score.value);
+<<<<<<< HEAD
                 // 播放音效
                 const audio = cc.loader.getRes(bombAudio);
                 cc.audioEngine.play(audio, false, 1);
+=======
+                this._taps.push(index);
+>>>>>>> 19a72e577f95e9a1822aaa68dcfd020139e24450
             },
         
             _onGameOver() {

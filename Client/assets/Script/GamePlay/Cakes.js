@@ -3,7 +3,7 @@ import BombAnimCtrl from './BombAnimCtrl';
  * 蛋糕数据
  */
 const Cakes = {
-    BOMB: {
+    A: {
         weight: 1,
         score: -2,
         prefab: 'Res/Prefabs/Bomb',
@@ -11,7 +11,7 @@ const Cakes = {
         bombPoolClass: BombAnimCtrl,
         bombAudio: 'Res/Audio/Bomb',
     },
-    CAKE1: {
+    B: {
         weight: 1,
         score: 1,
         prefab: 'Res/Prefabs/Cake1',
@@ -19,7 +19,7 @@ const Cakes = {
         bombPoolClass: BombAnimCtrl,
         bombAudio: 'Res/Audio/Cake',
     },
-    CAKE2: {
+    C: {
         weight: 1,
         score: 3,
         prefab: 'Res/Prefabs/Cake2',
@@ -27,7 +27,7 @@ const Cakes = {
         bombPoolClass: BombAnimCtrl,
         bombAudio: 'Res/Audio/Cake',
     },
-    CAKE3: {
+    D: {
         weight: 1,
         score: 5,
         prefab: 'Res/Prefabs/Cake3',
