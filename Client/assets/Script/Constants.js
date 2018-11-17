@@ -2,7 +2,7 @@ const Constants = {
     // 倒计时时间
     COUNT_DOWN: 3,
     // 游戏时间
-    GAME_PLAY_TIME: 10,
+    GAME_PLAY_TIME: 15,
     // 分享奖励时间
     SHARED_TIME: 10,
     // 生成蛋糕频率

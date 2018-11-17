@@ -74,11 +74,13 @@ cc.Class({
                             resArr.push(cake.prefab);
                             resArr.push(cake.bombPrefab);
                         });
-                        cc.loader.loadResDir('Prefabs', (err) => {
+                        cc.loader.loadResDir('Res', (err) => {
                             if (err) {
                                 console.error(err);
                                 return;
                             }
+                            const bg = cc.loader.getRes('Res/Audio/GameBG');
+                            cc.audioEngine.play(bg, true, 1);
                             // 初始化对象池
                             Object.keys(this._cakes).forEach((key) => {
                                 const cake = this._cakes[key];
@@ -121,7 +123,7 @@ cc.Class({
                         this._gamePlay.bubbleCtrl.spawnBubbles();
                         this._spawnTimer = this._startSpawn();
                         setTimeout(() => {
-                            this.transition('overForShare');
+                            this.transition('over');
                         }, Constants.GAME_PLAY_TIME * 1000);
                     },
                     _onExit: function () {
@@ -267,7 +269,7 @@ cc.Class({
             _onCakeTap(detail) {
                 cc.log('on cake tap');
                 const { cake, id } = detail;
-                const { score, pool, bombPool, bombPrefab } = this._cakes[id];
+                const { score, pool, bombPool, bombPrefab, bombAudio } = this._cakes[id];
                 // 爆炸动画
                 const bomb = this._getBomb(bombPool, bombPrefab);
                 this._gamePlay.background.addChild(bomb);
@@ -278,6 +280,9 @@ cc.Class({
                 this._score.cakes[id] += 1;
                 this._score.value += score;
                 this._gamePlay.ui.updateScore(this._score.value);
+                // 播放音效
+                const audio = cc.loader.getRes(bombAudio);
+                cc.audioEngine.play(audio, false, 1);
             },
         
             _onGameOver() {
@@ -304,5 +309,9 @@ cc.Class({
                 this.handle('capture');
             },
         });
+    },
+
+    onDestroy() {
+        cc.audioEngine.stopAll();
     },
 });

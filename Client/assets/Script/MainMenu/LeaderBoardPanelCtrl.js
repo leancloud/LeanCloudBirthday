@@ -31,7 +31,7 @@ cc.Class({
 
         this._content.removeAllChildren();
         
-        cc.loader.loadRes('Prefabs/LeaderBoardItem', (err, prefab) => {
+        cc.loader.loadRes('Res/Prefabs/LeaderBoardItem', (err, prefab) => {
             SDK.getRankings()
                 .then(rankings => {
                     // rankings 为前 50 的排名结果
@@ -108,7 +108,7 @@ cc.Class({
     // UI Events
 
     onEditInfoBtnClicked() {
-        cc.loader.loadRes('Prefabs/EditInfoPanel', (err, prefab) => {
+        cc.loader.loadRes('Res/Prefabs/EditInfoPanel', (err, prefab) => {
             const editInfoPanel = cc.instantiate(prefab);
             this.node.parent.addChild(editInfoPanel);
             editInfoPanel.position = cc.Vec2.ZERO;

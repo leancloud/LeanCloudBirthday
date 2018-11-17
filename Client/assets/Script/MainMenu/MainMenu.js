@@ -28,6 +28,14 @@ cc.Class({
                     cc.director.loadScene('gameplay');
                 });
         }
+        // 播放背景音乐
+        cc.loader.loadRes('Res/Audio/MenuBG', (error, audio) => {
+            cc.audioEngine.play(audio, true, 1);
+        });
+    },
+
+    onDestroy() {
+        cc.audioEngine.stopAll();
     },
 
     // UI Events
@@ -71,7 +79,7 @@ cc.Class({
     },
 
     onLeaderBoardBtnClicked() {
-        cc.loader.loadRes('Prefabs/LeaderBoardPanel', (err, prefab) => {
+        cc.loader.loadRes('Res/Prefabs/LeaderBoardPanel', (err, prefab) => {
             const leaderBoardPanel = cc.instantiate(prefab);
             this.node.addChild(leaderBoardPanel);
             leaderBoardPanel.position = cc.Vec2.ZERO;
@@ -79,7 +87,7 @@ cc.Class({
     },
 
     onRuleBtnClicked() {
-        cc.loader.loadRes('Prefabs/RulePanel', (err, prefab) => {
+        cc.loader.loadRes('Res/Prefabs/RulePanel', (err, prefab) => {
             const rulePanel = cc.instantiate(prefab);
             this.node.addChild(rulePanel);
             rulePanel.position = cc.Vec2.ZERO;
